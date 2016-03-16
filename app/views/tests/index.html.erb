@@ -1,0 +1,22 @@
+<table id="example" class="display responsive no-wrap" style="margin-top: 150px;">
+    <thead>
+        <tr>
+          <th>Elation ID</th>
+          <th>Name</th>
+          <th>Loinc Code</th>
+          <th>Count</th>
+          <th>Related Chart</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @tests.each do |test| %>
+        <tr>
+          <td><%= test.elation_id %></td>
+          <td><%= test.name %></td>
+          <td><%= test.loinc_num %></td>
+          <td><%= test.count %></td>
+          <td><%= test.graph.nil? ? "n/a" : test.graph %></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>
